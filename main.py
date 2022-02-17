@@ -24,9 +24,8 @@ def main():
         prices.append({'Company': max5.name, 'Price': c.calculate(max5, product)})
         # prices.sort(key=lambda x: x["Price"])
         print(product)
-        # filtered_prices = list(filter(filter_by_price, prices))
         print(sorted(list(filter(filter_by_price, prices)), key=sort_by_key))
-
+    #end for
 #end main     
 
 def sort_by_key(list):
