@@ -7,16 +7,20 @@ import csv
 def main():
     c = Calculator()
     # setting currency as an integer to have more precision than float type
+    # Company(name, fixed_value, value, max_weight, min_weight)
     boa_dex = Company('BoaDex', 1000, 5)
     boa_log = Company('BoaLog', 430, 12)
     max5 = Company('Transboa (ate 5Kg)', 210, 110, 5, 0)
     min5 = Company('Transboa (+5Kg)', 1000, 1, None, 5)
+    # Read csv file
     products_csv = open('products_csv.csv', 'r')
     reader = csv.reader(products_csv)
     products = []
     for row in reader:
         products.append(Product(row[0], int(row[1]), int(row[2])))
     #end for
+
+    # Calculate all company prices for each product
     for product in products:
         prices = []
         prices.append({'Company': boa_dex.name, 'Price': c.calculate(boa_dex, product)})
