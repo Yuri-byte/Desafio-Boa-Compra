@@ -5,4 +5,4 @@ class Product:
         self.weight = weight
     
     def __repr__(self) -> str:
-        return self.name + ', Distância: ' + str(self.distance) + ', Peso: ' + str(self.weight)
+        return self.name + ', Distance: ' + str(self.distance) + 'km, Weight: ' + str(self.weight) + 'kg'

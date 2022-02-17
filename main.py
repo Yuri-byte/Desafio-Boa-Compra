@@ -1,3 +1,4 @@
+from pprint import pprint
 from company import Company
 from product import Product
 from calculator import Calculator
@@ -22,9 +23,9 @@ def main():
         prices.append({'Company': boa_log.name, 'Price': c.calculate(boa_log, product)})
         prices.append({'Company': min5.name, 'Price': c.calculate(min5, product)})
         prices.append({'Company': max5.name, 'Price': c.calculate(max5, product)})
-        # prices.sort(key=lambda x: x["Price"])
-        print(product)
-        print(sorted(list(filter(filter_by_price, prices)), key=sort_by_key))
+        print('--------------------------------------------------------')
+        print(str(product) + ' ->')
+        pprint(sorted(list(filter(filter_by_price, prices)), key=sort_by_key))
     #end for
 #end main     
 
